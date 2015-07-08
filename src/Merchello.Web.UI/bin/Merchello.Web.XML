@@ -2094,6 +2094,62 @@
             The <see cref="T:System.Boolean"/>.
             </returns>
         </member>
+        <member name="T:Merchello.Web.Models.Note.NoteDisplay">
+            <summary>
+            The audit log display.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.Note.NoteDisplay.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.Note.NoteDisplay.EntityKey">
+            <summary>
+            Gets or sets the entity key.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.Note.NoteDisplay.EntityTfKey">
+            <summary>
+            Gets or sets the entity type field key.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.Note.NoteDisplay.EntityType">
+            <summary>
+            Gets or sets the entity type.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.Note.NoteDisplay.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.Note.NoteDisplay.RecordDate">
+            <summary>
+            Gets or sets the record date.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.Note.NoteDisplay.ExtendedData">
+            <summary>
+            Gets or sets the extended data.
+            </summary>
+        </member>
+        <member name="T:Merchello.Web.Models.Note.NoteDisplayExtensions">
+            <summary>
+            The audit log display extensions.
+            </summary>
+        </member>
+        <member name="M:Merchello.Web.Models.Note.NoteDisplayExtensions.ToNoteDisplay(Merchello.Core.Models.INote)">
+            <summary>
+            The to audit log display.
+            </summary>
+            <param name="auditLog">
+            The audit log.
+            </param>
+            <returns>
+            The <see cref="!:AuditLogDisplay"/>.
+            </returns>
+        </member>
         <member name="T:Merchello.Web.Models.Shipping.ShipmentRequestDisplay">
             <summary>
             API object for handling new shipment requests.
@@ -7031,6 +7087,11 @@
             The backoffice.
             </summary>
         </member>
+        <member name="F:Merchello.Web.Editors.OrderApiController._noteService">
+            <summary>
+            The note service.
+            </summary>
+        </member>
         <member name="M:Merchello.Web.Editors.OrderApiController.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Merchello.Web.Editors.OrderApiController"/> class.
@@ -7106,6 +7167,17 @@
             </param>
             <returns>
             The <see cref="T:Merchello.Web.Models.ContentEditing.AddressDisplay"/>.
+            </returns>
+        </member>
+        <member name="M:Merchello.Web.Editors.OrderApiController.GetNotes(System.Guid)">
+            <summary>
+            Returns the notes by an invoice id (key) 
+            </summary>
+            <param name="id">
+            The id.
+            </param>
+            <returns>
+            The collection of <see cref="T:Merchello.Core.Models.Note"/>s.
             </returns>
         </member>
         <member name="M:Merchello.Web.Editors.OrderApiController.ProcessesProductsToBackofficeOrder(Merchello.Web.Models.ContentEditing.BackofficeAddItemModel)">

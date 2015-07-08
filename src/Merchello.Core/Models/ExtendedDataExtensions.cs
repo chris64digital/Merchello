@@ -552,6 +552,38 @@
 
         #endregion
 
+        #region INote
+
+        /// <summary>
+        /// Adds an <see cref="INote"/> to extended data.  This is intended for a note against the sale (delivery instructions, etc)
+        /// </summary>
+        /// <param name="extendedData">
+        /// The extended Data.
+        /// </param>
+        /// <param name="note">
+        /// The note.
+        /// </param>
+        public static void AddNote(this ExtendedDataCollection extendedData, INote note)
+        {
+            var noteXml = SerializationHelper.SerializeToXml(note as Note);
+
+            ////var addressJson = JsonConvert.SerializeObject(address);
+
+            extendedData.SetValue(Constants.ExtendedDataKeys.Note, noteXml);
+        }
+
+        public static INote GetNote(this ExtendedDataCollection extendedData)
+        {
+            if (!extendedData.ContainsKey(Constants.ExtendedDataKeys.Note)) return null;
+
+            var attempt = SerializationHelper.DeserializeXml<Note>(extendedData.GetValue(Constants.ExtendedDataKeys.Note));
+
+            return attempt.Success ? attempt.Result : null;
+        }
+      
+
+        #endregion
+
         #region IShipment
 
 

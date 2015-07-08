@@ -175,6 +175,15 @@
             SaveCustomer(_merchelloContext, _customer, RaiseCustomerEvents);
         }
 
+        /// <summary>
+        /// Saves the note
+        /// </summary>
+        /// <param name="note">The <see cref="INote"/></param>
+        public virtual void SaveNote(INote note)
+        {
+            _customer.ExtendedData.AddNote(note);
+            SaveCustomer(_merchelloContext, _customer, RaiseCustomerEvents);
+        }
 
         /// <summary>
         /// Gets the bill to address
@@ -192,6 +201,15 @@
         public IAddress GetShipToAddress()
         {
             return _customer.ExtendedData.GetAddress(AddressType.Shipping);
+        }
+
+        /// <summary>
+        /// Gets the note
+        /// </summary>
+        /// <returns>Return the <see cref="INote"/></returns>
+        public INote GetNote()
+        {
+            return _customer.ExtendedData.GetNote();
         }
 
         /// <summary>
