@@ -181,7 +181,38 @@
         /// <param name="note">The <see cref="INote"/></param>
         public virtual void SaveNote(INote note)
         {
-            _customer.ExtendedData.AddNote(note);
+            // Check for existing note and modify it if it already exists so we don't end up with lots of orphan notes if the customer keeps submitting.
+            var existingNote = GetNote();
+            if (existingNote != null)
+            {
+                existingNote.Message = note.Message;
+                new NoteService().Save(existingNote);
+            }
+            else
+            {
+                _customer.ExtendedData.AddNote(note);
+            }
+            SaveCustomer(_merchelloContext, _customer, RaiseCustomerEvents);
+        }
+
+        /// <summary>
+        /// Saves the note
+        /// </summary>
+        /// <param name="message">The message to save into a note</param>
+        public virtual void SaveNote(string message)
+        {
+            // Check for existing note and modify it if it already exists so we don't end up with lots of orphan notes if the customer keeps submitting.
+            var existingNote = GetNote();
+            if (existingNote != null)
+            {
+                existingNote.Message = message;
+                new NoteService().Save(existingNote);
+            }
+            else
+            {
+                var noteService = new NoteService();
+                _customer.ExtendedData.AddNote(noteService.CreateNoteWithKey(message));
+            }
             SaveCustomer(_merchelloContext, _customer, RaiseCustomerEvents);
         }
 

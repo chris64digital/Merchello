@@ -1778,6 +1778,72 @@
             Gets the key.
             </summary>
         </member>
+        <member name="T:Merchello.Web.Models.ContentEditing.TaxationGatewayProviderDisplay">
+            <summary>
+            The taxation gateway provider display.
+            </summary>
+        </member>
+        <member name="T:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay">
+            <summary>
+            The gateway provider display.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.ProviderTfKey">
+            <summary>
+            Gets or sets the provider type field key.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.ExtendedData">
+            <summary>
+            Gets or sets the extended data.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.EncryptExtendedData">
+            <summary>
+            Gets or sets a value indicating whether encrypt extended data.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.Activated">
+            <summary>
+            Gets or sets a value indicating whether activated.
+            </summary>
+        </member>
+        <member name="P:Merchello.Web.Models.ContentEditing.TaxationGatewayProviderDisplay.TaxationByProductProvider">
+            <summary>
+            Gets or sets a value indicating whether taxation by product provider.
+            </summary>
+        </member>
+        <member name="T:Merchello.Web.Models.ContentEditing.TaxationGatewayProviderDisplayExtensions">
+            <summary>
+            The taxation gateway provider display extensions.
+            </summary>
+        </member>
+        <member name="M:Merchello.Web.Models.ContentEditing.TaxationGatewayProviderDisplayExtensions.ToTaxationGatewayProviderDisplay(Merchello.Core.Gateways.GatewayProviderBase)">
+            <summary>
+            The to taxation gateway provider display.
+            </summary>
+            <param name="provider">
+            The provider.
+            </param>
+            <returns>
+            The <see cref="T:Merchello.Web.Models.ContentEditing.TaxationGatewayProviderDisplay"/>.
+            </returns>
+        </member>
         <member name="T:Merchello.Web.Models.Customer.CustomerContextDataExtensions">
             <summary>
             The customer context data extensions.
@@ -2136,18 +2202,18 @@
         </member>
         <member name="T:Merchello.Web.Models.Note.NoteDisplayExtensions">
             <summary>
-            The audit log display extensions.
+            The note display extensions.
             </summary>
         </member>
         <member name="M:Merchello.Web.Models.Note.NoteDisplayExtensions.ToNoteDisplay(Merchello.Core.Models.INote)">
             <summary>
             The to audit log display.
             </summary>
-            <param name="auditLog">
+            <param name="note">
             The audit log.
             </param>
             <returns>
-            The <see cref="!:AuditLogDisplay"/>.
+            The <see cref="T:Merchello.Web.Models.Note.NoteDisplay"/>.
             </returns>
         </member>
         <member name="T:Merchello.Web.Models.Shipping.ShipmentRequestDisplay">
@@ -10179,46 +10245,6 @@
             Gets or sets the create date.
             </summary>
         </member>
-        <member name="T:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay">
-            <summary>
-            The gateway provider display.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.Key">
-            <summary>
-            Gets or sets the key.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.ProviderTfKey">
-            <summary>
-            Gets or sets the provider type field key.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.Name">
-            <summary>
-            Gets or sets the name.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.Description">
-            <summary>
-            Gets or sets the description.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.ExtendedData">
-            <summary>
-            Gets or sets the extended data.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.EncryptExtendedData">
-            <summary>
-            Gets or sets a value indicating whether encrypt extended data.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay.Activated">
-            <summary>
-            Gets or sets a value indicating whether activated.
-            </summary>
-        </member>
         <member name="T:Merchello.Web.Models.ContentEditing.GatewayProviderDisplayExtensions">
             <summary>
             Mapping extensions for <see cref="T:Merchello.Web.Models.ContentEditing.GatewayProviderDisplay"/> classes.
@@ -10989,6 +11015,11 @@
             Gets or sets a value indicating whether global shipping is taxable.
             </summary>
         </member>
+        <member name="P:Merchello.Web.Models.ContentEditing.SettingDisplay.GlobalTaxationApplication">
+            <summary>
+            Gets or sets the how taxes should be applied globally.
+            </summary>
+        </member>
         <member name="T:Merchello.Web.Models.ContentEditing.TaxMethodDisplay">
             <summary>
             The tax method display.
@@ -11019,10 +11050,56 @@
             Gets or sets the percentage tax rate.
             </summary>
         </member>
+        <member name="P:Merchello.Web.Models.ContentEditing.TaxMethodDisplay.ProductTaxMethod">
+            <summary>
+            Gets or sets a value indicating whether this method is used for product based taxation like VAT.
+            </summary>
+        </member>
         <member name="P:Merchello.Web.Models.ContentEditing.TaxMethodDisplay.Provinces">
             <summary>
             Gets or sets the provinces.
             </summary>
+        </member>
+        <member name="T:Merchello.Web.Models.ContentEditing.TaxMethodDisplayExtensions">
+            <summary>
+            The tax method display extensions.
+            </summary>
+        </member>
+        <member name="M:Merchello.Web.Models.ContentEditing.TaxMethodDisplayExtensions.ToTaxMethod(Merchello.Web.Models.ContentEditing.TaxMethodDisplay,Merchello.Core.Models.ITaxMethod)">
+            <summary>
+            Maps a <see cref="T:Merchello.Web.Models.ContentEditing.TaxMethodDisplay"/> to <see cref="T:Merchello.Core.Models.ITaxMethod"/>.
+            </summary>
+            <param name="taxMethodDisplay">
+            The tax method display.
+            </param>
+            <param name="destination">
+            The destination.
+            </param>
+            <returns>
+            The <see cref="T:Merchello.Core.Models.ITaxMethod"/>.
+            </returns>
+        </member>
+        <member name="M:Merchello.Web.Models.ContentEditing.TaxMethodDisplayExtensions.ToTaxMethodDisplay(Merchello.Core.Models.ITaxMethod)">
+            <summary>
+            The to tax method display.
+            </summary>
+            <param name="taxMethod">
+            The tax method.
+            </param>
+            <returns>
+            The <see cref="T:Merchello.Web.Models.ContentEditing.TaxMethodDisplay"/>.
+            </returns>
+        </member>
+        <member name="M:Merchello.Web.Models.ContentEditing.TaxMethodDisplayExtensions.ToTaxMethodDisplay(Merchello.Core.Gateways.Taxation.ITaxationGatewayMethod)">
+            <summary>
+            The to tax method display.
+            </summary>
+            <param name="taxGatewayMethod">
+            The tax gateway method.
+            </param>
+            <returns>
+            The <see cref="T:Merchello.Web.Models.ContentEditing.TaxMethodDisplay"/>.
+            </returns>
         </member>
         <member name="T:Merchello.Web.Models.ContentEditing.WarehouseCatalogDisplay">
             <summary>
@@ -13928,9 +14005,20 @@
             The delete event args.
             </param>
         </member>
+        <member name="M:Merchello.Web.UmbracoApplicationEventHandler.StoreSettingServiceOnSaved(Merchello.Core.Services.IStoreSettingService,Umbraco.Core.Events.SaveEventArgs{Merchello.Core.Models.IStoreSetting})">
+            <summary>
+            The store setting service on saved.
+            </summary>
+            <param name="sender">
+            The sender.
+            </param>
+            <param name="e">
+            The e.
+            </param>
+        </member>
         <member name="M:Merchello.Web.UmbracoApplicationEventHandler.SalePreparationBaseOnFinalizing(Merchello.Core.Sales.SalePreparationBase,Merchello.Core.Events.SalesPreparationEventArgs{Merchello.Core.Gateways.Payment.IPaymentResult})">
             <summary>
-            Performs audits on SalePrepartionBase.Finalizing
+            Performs audits on SalePreparationBase.Finalizing
             </summary>
             <param name="sender">
             The sender.

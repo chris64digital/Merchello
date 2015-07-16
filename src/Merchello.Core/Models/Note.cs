@@ -121,5 +121,15 @@
             }
         }
 
+        public Note()
+        {
+            Message = null;
+            CreateDate = DateTime.Now;
+            UpdateDate = DateTime.Now;
+            EntityKey = null;
+            EntityTfKey = null;
+            Key = Guid.Empty;
+        }
+
     }
 }

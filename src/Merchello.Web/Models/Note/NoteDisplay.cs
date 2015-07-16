@@ -54,7 +54,7 @@
     }
 
     /// <summary>
-    /// The audit log display extensions.
+    /// The note display extensions.
     /// </summary>
     [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleClass", Justification = "Reviewed. Suppression is OK here.")]
     internal static class NoteDisplayExtensions
@@ -62,11 +62,11 @@
         /// <summary>
         /// The to audit log display.
         /// </summary>
-        /// <param name="auditLog">
+        /// <param name="note">
         /// The audit log.
         /// </param>
         /// <returns>
-        /// The <see cref="AuditLogDisplay"/>.
+        /// The <see cref="NoteDisplay"/>.
         /// </returns>
         public static NoteDisplay ToNoteDisplay(this INote note)
         {

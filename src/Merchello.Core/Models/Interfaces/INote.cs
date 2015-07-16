@@ -11,7 +11,7 @@
     public interface INote : IEntity
     {
         /// <summary>
-        /// Gets or sets the entity key related to the audit record
+        /// Gets or sets the entity key related to the note
         /// </summary>
         [DataMember]
         Guid? EntityKey { get; set; }
