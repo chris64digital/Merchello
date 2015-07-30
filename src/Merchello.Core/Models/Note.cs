@@ -13,7 +13,7 @@
     /// </summary>
     [Serializable]
     [DataContract(IsReference = true)]
-    internal class Note : Entity, INote
+    public class Note : Entity, INote
     {
         #region Fields
 
@@ -128,7 +128,6 @@
             UpdateDate = DateTime.Now;
             EntityKey = null;
             EntityTfKey = null;
-            Key = Guid.Empty;
         }
 
     }

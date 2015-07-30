@@ -49,7 +49,7 @@
         /// Saves the sale note
         /// </summary>
         /// <param name="note">The shipping <see cref="INote"/></param>
-        void SaveNote(INote note);
+        void SaveNote(NoteDisplay note);
 
         //void SaveOfferCode(string offerCode);
 
@@ -71,7 +71,7 @@
         /// </summary>
         /// <remarks>Returns the <see cref="INote"/></remarks>
         /// <returns>A <see cref="INote"/></returns>
-        INote GetNote();
+        NoteDisplay GetNote();
 
         /// <summary>
         /// Saves a single <see cref="IShipmentRateQuote"/>

@@ -6,7 +6,7 @@
     using Merchello.Core.Models.EntityBase;
 
     /// <summary>
-    /// Defines an Audit record.
+    /// Defines a note.
     /// </summary>
     public interface INote : IEntity
     {

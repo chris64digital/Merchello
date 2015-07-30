@@ -1,21 +1,23 @@
-﻿namespace Merchello.Web.Models.Note
+﻿namespace Merchello.Core.Models
 {
     using System;
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
+    using System.Collections.Specialized;
+    using System.Reflection;
+    using System.Runtime.Serialization;
 
-    using Merchello.Core;
+    using Merchello.Core.Models.EntityBase;
     using Merchello.Core.Models.Interfaces;
-
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
-    using Merchello.Core.Models;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
-    /// The audit log display.
+    /// The note.
     /// </summary>
+    [Serializable]
     public class NoteDisplay
     {
+
         /// <summary>
         /// Gets or sets the key.
         /// </summary>
@@ -47,14 +49,12 @@
         /// </summary>
         public DateTime RecordDate { get; set; }
 
-        /// <summary>
-        /// Gets or sets the extended data.
-        /// </summary>
-        public IEnumerable<KeyValuePair<string, string>> ExtendedData { get; set; }
+
     }
 
+
     /// <summary>
-    /// The note display extensions.
+    /// The audit log display extensions.
     /// </summary>
     [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleClass", Justification = "Reviewed. Suppression is OK here.")]
     internal static class NoteDisplayExtensions
@@ -70,7 +70,14 @@
         /// </returns>
         public static NoteDisplay ToNoteDisplay(this INote note)
         {
-            return AutoMapper.Mapper.Map<NoteDisplay>(note);
+            return new NoteDisplay()
+            {
+                Message = note.Message,
+                Key = note.Key,
+                EntityKey = note.EntityKey,
+                EntityTfKey = note.EntityTfKey,
+                RecordDate = note.CreateDate
+            };
         }
     }
 }

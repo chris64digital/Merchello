@@ -241,6 +241,7 @@
   <ItemGroup>
     <Compile Include="ActivatorHelper.cs" />
     <Compile Include="Chains\InvoiceCreation\AddCouponDiscountsToInvoiceTask.cs" />
+    <Compile Include="Chains\InvoiceCreation\AddNotesToInvoiceTask.cs" />
     <Compile Include="Chains\OfferConstraints\IOfferProcessor.cs" />
     <Compile Include="Chains\OfferConstraints\IOfferProcessorFactory.cs" />
     <Compile Include="Chains\OfferConstraints\IOfferConstraintChainTask.cs" />
@@ -294,6 +295,7 @@
     <Compile Include="Marketing\Rewards\OfferRewardComponentBaseExtensions.cs" />
     <Compile Include="Marketing\Rewards\OfferRewardComponentBase{T}.cs" />
     <Compile Include="Models\Interfaces\INote.cs" />
+    <Compile Include="Models\NoteDisplay.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Interfaces\IOfferRedeemed.cs" />
     <Compile Include="Models\Interfaces\IOfferSettings.cs" />

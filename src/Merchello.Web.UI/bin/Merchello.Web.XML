@@ -940,9 +940,9 @@
             Gets a value indicating that this component does not require configuration.
             </summary>      
         </member>
-        <member name="T:Merchello.Web.Editors.MarketingApiController">
+        <member name="T:Merchello.Web.Editors.NoteApiController">
             <summary>
-            An API controller for the Merchello marketing section.
+            The note api controller.
             </summary>
         </member>
         <member name="T:Merchello.Web.WebApi.MerchelloApiController">
@@ -986,6 +986,45 @@
             <remarks>
             Useful for debugging
             </remarks>
+        </member>
+        <member name="F:Merchello.Web.Editors.NoteApiController._noteService">
+            <summary>
+            The note service.
+            </summary>
+        </member>
+        <member name="F:Merchello.Web.Editors.NoteApiController._merchelloHelper">
+            <summary>
+            The <see cref="T:Merchello.Web.MerchelloHelper"/>.
+            </summary>
+        </member>
+        <member name="M:Merchello.Web.Editors.NoteApiController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Merchello.Web.Editors.NoteApiController"/> class.
+            </summary>
+        </member>
+        <member name="M:Merchello.Web.Editors.NoteApiController.#ctor(Merchello.Core.IMerchelloContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Merchello.Web.Editors.NoteApiController"/> class.
+            </summary>
+            <param name="merchelloContext">
+            The merchello context.
+            </param>
+        </member>
+        <member name="M:Merchello.Web.Editors.NoteApiController.GetByEntityKey(System.Guid)">
+            <summary>
+            The get by entity key.
+            </summary>
+            <param name="id">
+            The id.
+            </param>
+            <returns>
+            The <see cref="T:System.Collections.IEnumerable"/>.
+            </returns>
+        </member>
+        <member name="T:Merchello.Web.Editors.MarketingApiController">
+            <summary>
+            An API controller for the Merchello marketing section.
+            </summary>
         </member>
         <member name="F:Merchello.Web.Editors.MarketingApiController._offerSettingsService">
             <summary>
@@ -2158,62 +2197,6 @@
             </param>
             <returns>
             The <see cref="T:System.Boolean"/>.
-            </returns>
-        </member>
-        <member name="T:Merchello.Web.Models.Note.NoteDisplay">
-            <summary>
-            The audit log display.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.Note.NoteDisplay.Key">
-            <summary>
-            Gets or sets the key.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.Note.NoteDisplay.EntityKey">
-            <summary>
-            Gets or sets the entity key.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.Note.NoteDisplay.EntityTfKey">
-            <summary>
-            Gets or sets the entity type field key.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.Note.NoteDisplay.EntityType">
-            <summary>
-            Gets or sets the entity type.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.Note.NoteDisplay.Message">
-            <summary>
-            Gets or sets the message.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.Note.NoteDisplay.RecordDate">
-            <summary>
-            Gets or sets the record date.
-            </summary>
-        </member>
-        <member name="P:Merchello.Web.Models.Note.NoteDisplay.ExtendedData">
-            <summary>
-            Gets or sets the extended data.
-            </summary>
-        </member>
-        <member name="T:Merchello.Web.Models.Note.NoteDisplayExtensions">
-            <summary>
-            The note display extensions.
-            </summary>
-        </member>
-        <member name="M:Merchello.Web.Models.Note.NoteDisplayExtensions.ToNoteDisplay(Merchello.Core.Models.INote)">
-            <summary>
-            The to audit log display.
-            </summary>
-            <param name="note">
-            The audit log.
-            </param>
-            <returns>
-            The <see cref="T:Merchello.Web.Models.Note.NoteDisplay"/>.
             </returns>
         </member>
         <member name="T:Merchello.Web.Models.Shipping.ShipmentRequestDisplay">

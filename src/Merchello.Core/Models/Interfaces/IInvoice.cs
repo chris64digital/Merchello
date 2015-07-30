@@ -1,6 +1,7 @@
 ﻿namespace Merchello.Core.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.Runtime.Serialization;
 
     /// <summary>
@@ -133,5 +134,11 @@
         /// </summary>
         [DataMember]
         OrderCollection Orders { get; set; }
+
+        /// <summary>
+        /// Gets or sets the notes associated with the Invoice
+        /// </summary>
+        [DataMember]
+        List<Note> Notes { get; set; }
     }
 }

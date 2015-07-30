@@ -16,8 +16,7 @@
 
     using Umbraco.Web;
     using Umbraco.Web.Mvc;
-    using Merchello.Web.Models.Note;
-
+    
     /// <summary>
     /// The order api controller.
     /// </summary>
@@ -201,9 +200,9 @@
         /// The collection of <see cref="Note"/>s.
         /// </returns>
         [HttpGet]
-        public IEnumerable<NoteDisplay> GetNotes(Guid id)
+        public IEnumerable<INote> GetNotes(Guid id)
         {
-            return _noteService.GetNotesByEntityKey(id).Select(x => x.ToNoteDisplay());
+            return _noteService.GetNotesByEntityKey(id);
         }
 
 
