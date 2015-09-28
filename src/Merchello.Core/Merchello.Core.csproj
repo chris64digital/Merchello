@@ -244,6 +244,7 @@
     <Compile Include="Chains\ConfigurationChainBase.cs" />
     <Compile Include="Chains\IDataModifierChain{T}.cs" />
     <Compile Include="Chains\InvoiceCreation\AddCouponDiscountsToInvoiceTask.cs" />
+    <Compile Include="Chains\InvoiceCreation\AddNotesToInvoiceTask.cs" />
     <Compile Include="Chains\OfferConstraints\IOfferProcessor.cs" />
     <Compile Include="Chains\OfferConstraints\IOfferProcessorFactory.cs" />
     <Compile Include="Chains\OfferConstraints\IOfferConstraintChainTask.cs" />
@@ -334,6 +335,9 @@
     <Compile Include="Marketing\Rewards\OfferRewardComponentBase{T}.cs" />
     <Compile Include="Models\DetachedContentType.cs" />
     <Compile Include="Models\EntityCollection.cs" />
+    <Compile Include="Models\Interfaces\INote.cs" />
+    <Compile Include="Models\NoteDisplay.cs" />
+    <Compile Include="Models\Note.cs" />
     <Compile Include="Models\EntityCollectionExtensions.cs" />
     <Compile Include="Models\Interfaces\IDataModifierData.cs" />
     <Compile Include="Models\Interfaces\IDetachedContentType.cs" />
@@ -381,6 +385,7 @@
     <Compile Include="Models\OfferRedeemed.cs" />
     <Compile Include="Models\OfferSettings.cs" />
     <Compile Include="Models\Rdbms\Customer2EntityCollectionDto.cs" />
+    <Compile Include="Models\Rdbms\NoteDto.cs" />
     <Compile Include="Models\Rdbms\DetachedContentTypeDto.cs" />
     <Compile Include="Models\Rdbms\DigitalMediaDto.cs" />
     <Compile Include="Models\Rdbms\Invoice2EntityCollectionDto.cs" />
@@ -466,6 +471,7 @@
     <Compile Include="ObjectResolution\MerchelloManyObjectsResolverBase.cs" />
     <Compile Include="Observation\MonitorForAttribute.cs" />
     <Compile Include="Observation\Unsubscriber.cs" />
+    <Compile Include="Persistence\Factories\NoteFactory.cs" />
     <Compile Include="Persistence\Factories\AuditLogFactory.cs" />
     <Compile Include="Persistence\Factories\DetachedContentTypeFactory.cs" />
     <Compile Include="Persistence\Factories\DigitalMediaFactory.cs" />
@@ -473,6 +479,7 @@
     <Compile Include="Persistence\Factories\OfferRedeemedFactory.cs" />
     <Compile Include="Persistence\Factories\OfferSettingsFactory.cs" />
     <Compile Include="Persistence\Factories\ShipmentStatusFactory.cs" />
+    <Compile Include="Persistence\Mappers\NoteMapper.cs" />
     <Compile Include="Persistence\Mappers\AuditLogMapper.cs" />
     <Compile Include="Persistence\Mappers\DigitalMediaMapper.cs" />
     <Compile Include="Persistence\Mappers\EntityCollectionMapper.cs" />
@@ -495,10 +502,12 @@
     <Compile Include="Persistence\Migrations\Upgrades\TargetVersionOneNineZero\InsertNewTypeFieldData.cs" />
     <Compile Include="Persistence\Querying\QueryExtensions.cs" />
     <Compile Include="Persistence\Querying\SortDirection.cs" />
+    <Compile Include="Persistence\Repositories\NoteRepository.cs" />
     <Compile Include="Persistence\Repositories\AuditLogRepository.cs" />
     <Compile Include="Persistence\Repositories\DigitalMediaRepository.cs" />
     <Compile Include="Persistence\Repositories\EntityCollectionRepository.cs" />
     <Compile Include="Persistence\Repositories\Interfaces\IAssertsDocumentNumber.cs" />
+    <Compile Include="Persistence\Repositories\Interfaces\INoteRepository.cs" />
     <Compile Include="Persistence\Repositories\Interfaces\IAuditLogRepository.cs" />
     <Compile Include="Persistence\Repositories\Interfaces\IDigitalMediaRepository.cs" />
     <Compile Include="Persistence\Repositories\Interfaces\IEntityCollectionRepository.cs" />
@@ -1052,12 +1061,14 @@
     <Compile Include="SerializationHelper.cs" />
     <Compile Include="Services\AnonymousCustomerService.cs" />
     <Compile Include="Services\AppliedPaymentService.cs" />
+    <Compile Include="Services\NoteService.cs" />
     <Compile Include="Services\AuditLogService.cs" />
     <Compile Include="Services\CustomerAddressService.cs" />
     <Compile Include="Services\DigitalMediaService.cs" />
     <Compile Include="Services\EntityCollectionService.cs" />
     <Compile Include="Services\Interfaces\IAnonymousCustomerService.cs" />
     <Compile Include="Services\Interfaces\IAppliedPaymentService.cs" />
+    <Compile Include="Services\Interfaces\INoteService.cs" />
     <Compile Include="Services\Interfaces\IAuditLogService.cs" />
     <Compile Include="Services\Interfaces\ICustomerAddressService.cs" />
     <Compile Include="Services\Interfaces\IDigitalMediaService.cs" />

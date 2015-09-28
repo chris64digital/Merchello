@@ -33,6 +33,11 @@
         private Lazy<IAuditLogService> _auditLogService;
 
         /// <summary>
+        /// The note service.
+        /// </summary>
+        private Lazy<INoteService> _noteService;
+
+        /// <summary>
         /// The country tax rate service.
         /// </summary>
         private Lazy<ITaxMethodService> _countryTaxRateService;
@@ -174,6 +179,14 @@
         public IAuditLogService AuditLogService
         {
             get { return _auditLogService.Value; }
+        }
+
+        /// <summary>
+        /// Gets the <see cref="INoteService"/>
+        /// </summary>
+        public INoteService NoteService
+        {
+            get { return _noteService.Value; }
         }
 
         /// <summary>
@@ -412,6 +425,11 @@
 
             if (_auditLogService == null)
                 _auditLogService = new Lazy<IAuditLogService>(() => new AuditLogService(dbDatabaseUnitOfWorkProvider, repositoryFactory.Value));
+
+
+            if (_noteService == null)
+                _noteService = new Lazy<INoteService>(() => new NoteService(dbDatabaseUnitOfWorkProvider, repositoryFactory.Value));
+
 
             if (_customerAddressService == null)
                 _customerAddressService = new Lazy<ICustomerAddressService>(() => new CustomerAddressService(dbDatabaseUnitOfWorkProvider, repositoryFactory.Value));
